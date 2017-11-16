@@ -13,7 +13,7 @@ public class ConversionBot implements IBasicCommunication {
     }
 
     @Override
-    public String respond() throws UnderstandingException {
-        return ("responding with");
+    public void respond() throws UnderstandingException {
+        System.out.println("responding with");
     }
 }

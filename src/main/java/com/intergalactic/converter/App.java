@@ -18,10 +18,8 @@ public class App {
         String readLine = "";
 
         while ((readLine = buffer.readLine()) != null) {
-            System.out.println(readLine);
+
         }
-
-
 
 
     }
