@@ -13,7 +13,6 @@ public class NumberConversionUtil {
             }
         }
 
-
         //Additions second
         int sum = 0;
         for (int num : romanNumeralInts) {
@@ -25,7 +24,6 @@ public class NumberConversionUtil {
 
     private static int[] convertToInts(String r) throws Exception {
         int[] intArray = new int[r.length()];
-
         for (int i = 0; i < r.length(); i++) {
             intArray[i] = convertRomanCharToDecimal(r.charAt(i));
         }
@@ -52,8 +50,6 @@ public class NumberConversionUtil {
             default:
                 String exDescription = String.format("Character %s is not a valid", romanChar);
                 throw new Exception(exDescription);
-
-
         }
     }
 
