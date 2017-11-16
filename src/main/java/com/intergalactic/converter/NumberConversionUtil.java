@@ -1,10 +1,8 @@
 package src.main.java.com.intergalactic.converter;
 
-import java.util.Arrays;
-
 public class NumberConversionUtil {
 
-    public static int romanToDecimal(String romanNumeral) {
+    public static int romanToDecimal(String romanNumeral) throws Exception {
         int[] romanNumeralInts = convertToInts(romanNumeral);
 
         // Do subtractions first
@@ -25,36 +23,38 @@ public class NumberConversionUtil {
         return sum;
     }
 
-    private static int[] convertToInts(String r) {
+    private static int[] convertToInts(String r) throws Exception {
         int[] intArray = new int[r.length()];
 
         for (int i = 0; i < r.length(); i++) {
-            switch (r.charAt(i)) {
-                case 'I':
-                    intArray[i] = 1;
-                    break;
-                case 'V':
-                    intArray[i] = 5;
-                    break;
-                case 'X':
-                    intArray[i] = 10;
-                    break;
-                case 'L':
-                    intArray[i] = 50;
-                    break;
-                case 'C':
-                    intArray[i] = 100;
-                    break;
-                case 'D':
-                    intArray[i] = 500;
-                    break;
-                case 'M':
-                    intArray[i] = 1000;
-                    break;
-            }
+            intArray[i] = convertRomanCharToDecimal(r.charAt(i));
         }
 
         return intArray;
+    }
+
+    private static int convertRomanCharToDecimal(char romanChar) throws Exception {
+        switch (romanChar) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+            default:
+                String exDescription = String.format("Character %s is not a valid", romanChar);
+                throw new Exception(exDescription);
+
+
+        }
     }
 
 
