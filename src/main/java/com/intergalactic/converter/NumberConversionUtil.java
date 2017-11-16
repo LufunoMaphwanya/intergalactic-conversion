@@ -5,34 +5,7 @@ import java.util.Arrays;
 public class NumberConversionUtil {
 
     public static int romanToDecimal(String romanNumeral) {
-        int[] romanNumeralInts = new int[romanNumeral.length()];
-
-        for (int i = 0; i < romanNumeral.length(); i++) {
-            switch (romanNumeral.charAt(i)) {
-                case 'I':
-                    romanNumeralInts[i] = 1;
-                    break;
-                case 'V':
-                    romanNumeralInts[i] = 5;
-                    break;
-                case 'X':
-                    romanNumeralInts[i] = 10;
-                    break;
-                case 'L':
-                    romanNumeralInts[i] = 50;
-                    break;
-                case 'C':
-                    romanNumeralInts[i] = 100;
-                    break;
-                case 'D':
-                    romanNumeralInts[i] = 500;
-                    break;
-                case 'M':
-                    romanNumeralInts[i] = 1000;
-                    break;
-            }
-        }
-
+        int[] romanNumeralInts = convertToInts(romanNumeral);
 
         // Do subtractions first
         for (int i = 0; i < romanNumeralInts.length; i++) {
@@ -50,6 +23,38 @@ public class NumberConversionUtil {
         }
 
         return sum;
+    }
+
+    private static int[] convertToInts(String r) {
+        int[] intArray = new int[r.length()];
+
+        for (int i = 0; i < r.length(); i++) {
+            switch (r.charAt(i)) {
+                case 'I':
+                    intArray[i] = 1;
+                    break;
+                case 'V':
+                    intArray[i] = 5;
+                    break;
+                case 'X':
+                    intArray[i] = 10;
+                    break;
+                case 'L':
+                    intArray[i] = 50;
+                    break;
+                case 'C':
+                    intArray[i] = 100;
+                    break;
+                case 'D':
+                    intArray[i] = 500;
+                    break;
+                case 'M':
+                    intArray[i] = 1000;
+                    break;
+            }
+        }
+
+        return intArray;
     }
 
 
