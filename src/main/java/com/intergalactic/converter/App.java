@@ -1,12 +1,12 @@
-package com.bank;
+package src.main.java.com.intergalactic.converter;
 
-/**
-* Hello world!
-*
-*/
+import static src.main.java.com.intergalactic.converter.NumberConversionUtil.romanToDecimal;
 
 public class App {
-   public static void main( String[] args ){
-      System.out.println( "Hello World!" );
-   }
+
+    public static void main(String[] args){
+
+
+        System.out.println(romanToDecimal("MCMXLIV"));
+    }
 }
