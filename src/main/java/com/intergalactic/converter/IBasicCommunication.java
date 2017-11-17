@@ -1,7 +1,7 @@
-package src.main.java.com.intergalactic.converter;
+package com.intergalactic.converter;
 
 public interface IBasicCommunication {
-    void receiveInfo(String i);
+    void receiveInfo(String i) throws Exception;
 
-    void respond() throws UnderstandingException;
+    String respond(String question) throws Exception;
 }

@@ -1,14 +1,15 @@
-package src.main.java.com.intergalactic.converter;
+package com.intergalactic.converter;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-import static src.main.java.com.intergalactic.converter.NumberConversionUtil.romanToDecimal;
 
 public class App {
 
     public static void main(String[] args) throws Exception {
+
+        ConversionBot bot = new ConversionBot();
 
         String filename = "instructions.txt";
 
@@ -18,7 +19,7 @@ public class App {
         String readLine = "";
 
         while ((readLine = buffer.readLine()) != null) {
-
+            bot.receiveInfo(readLine);
         }
 
 
